@@ -6,15 +6,14 @@ export default {
 		const store = useStore();
 
 		return {
+      user: computed(() => store.state.homeModel.user),
 			repos: computed(() => store.state.homeModel.repos)
 		};
 	},
+
 	methods: {
 		get: function() {
-			this.$http
-				.get('https://api.github.com/users/andrecarello/repos')
-            // .then(({data}) => console.log(data))
-				.then(({ data }) => this.$store.dispatch('homeModel/repos', data));
+      _.controller('home').getRepos('andrecarello')
 		}
 	}
 

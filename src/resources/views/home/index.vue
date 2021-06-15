@@ -4,6 +4,8 @@
     <h1 class="text-3xl font-900 mb-10">Repositórios</h1>
     <button @click="get">Buscar</button>
 
+    <p>usuário: {{ user }}</p>
+    <br />
     <ul>
        <li v-for="(repo, index) in repos" :key="index">
           {{ repo.name }} - {{ repo.language }}
